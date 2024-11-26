@@ -17,6 +17,7 @@ function calculareDiscountedPrice(initialPrice, discountPercentage) {
   return finalPrice;
 }
 console.log(calculareDiscountedPrice(1000, 10));
+console.log(calculareDiscountedPrice(2000, 20));
 
 // 3) სტრინგის ნაცვლად სიმბოლოების დაბრუნება
 
@@ -46,9 +47,28 @@ console.log(changeToLowerCase("MY NAME IS JANE"));
 
 // 5) მასივის გაფილტვრა და კენტი რიცხვების დაბრუნება
 
-function filterNumbers(numbers) {
+function filterOddNumbers(numbers) {
   return numbers.filter(function (number) {
     return number % 2 !== 0;
   });
 }
-console.log(filterNumbers([1, 3, 4, 8, 9]));
+console.log(filterOddNumbers([1, 3, 4, 8, 9, 17, 20, 25, 29, 30]));
+
+// 6) მასივის მიღება და იმ ელემენტის დაბრუნება, რომლის ფასიც უმცირესია
+
+const dataToUse = data;
+console.log(dataToUse);
+
+function getLowestPrice(arr) {
+  if (arr.length === 0) return null;
+  let lowest = arr[0];
+
+  arr.forEach((item) => {
+    if (item.price < lowest.price) {
+      lowest = item;
+    }
+  });
+  return lowest;
+}
+const lowestPriceItem = getLowestPrice(dataToUse);
+console.log(lowestPriceItem);
